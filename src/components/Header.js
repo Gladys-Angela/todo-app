@@ -22,8 +22,8 @@ const Header = () => {
   return (
     <div id='todo header' className='header'>
         <h2>Simple Todo App</h2>
-        <input type="text" value={title} onChange={(e) => setTitle
-        (e.target.value)}/>
+        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}
+        />
         <span className="add-button" onClick={addTodo}>Add</span>
     </div>
   );
