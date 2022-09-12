@@ -11,5 +11,5 @@ CRUD (create, update, Delete)
 
 ### Frontend repo
 
-git@github.com:Gladys-Angela/phase-3-sinatra-react-project.git
+https://github.com/Gladys-Angela/todo-app.git
 
