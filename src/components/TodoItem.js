@@ -5,7 +5,7 @@ const TodoItem = ({ todo, setRefresh }) => {
     const updateTodo = () => {
     todo.done = !todo.done
 
-    fetch("http://localhost:8000/todos" + todo.id, {
+    fetch("http://localhost:8000/todos/" + todo.id, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -16,10 +16,19 @@ const TodoItem = ({ todo, setRefresh }) => {
         setRefresh(true)
     })
 }
+
+const deleteTodo = () => {
+    fetch("http://localhost:8000/todos/" + todo.id, {
+        method: "DELETE",
+    }).then(()=> {
+        console.log('todo deleted.')
+        setRefresh(true)
+    })
+}
   return (
     <li className={`${todo.done ? "checked" : ""}`}>
         <div onClick={updateTodo}>{todo.title}</div>
-        <span className='close'>X</span>
+        <span className='close' onClick={deleteTodo}>x</span>
     </li>
   )
 };
