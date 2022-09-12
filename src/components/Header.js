@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Header = () => {
+const Header = ({setRefresh}) => {
     const [title, setTitle] = useState("");
 
     const addTodo = () => {
@@ -15,7 +15,10 @@ const Header = () => {
             body: JSON.stringify(newTodo)
         }).then(()=>{
             setTitle("")
-            console.log('new todo added.')
+            setRefresh(true)
+            setTimeout(() => {
+                alert('new todo added.')
+            }, 500)
         });
         }
 
