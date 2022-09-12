@@ -4,8 +4,8 @@ const TodoItem = ({ todo, setRefresh }) => {
 
     const updateTodo = () => {
     todo.done = !todo.done
-
-    fetch("http://localhost:8000/todos/" + todo.id, {
+    //http://localhost:8000/todos/
+    fetch("http://localhost:9292/todos/" + todo.id, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -16,9 +16,9 @@ const TodoItem = ({ todo, setRefresh }) => {
         setRefresh(true)
     })
 }
-
+//http://localhost:8000/todos/
 const deleteTodo = () => {
-    fetch("http://localhost:8000/todos/" + todo.id, {
+    fetch("http://localhost:9292/todos/" + todo.id, {
         method: "DELETE",
     }).then(()=> {
         console.log('todo deleted.')

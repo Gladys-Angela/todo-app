@@ -9,7 +9,7 @@ CRUD (create, update, Delete)
 ### Live Link
 
 
-### How to run it
+### Frontend repo
 
-create-react-app todolist
+git@github.com:Gladys-Angela/phase-3-sinatra-react-project.git
 

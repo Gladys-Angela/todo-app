@@ -3,10 +3,10 @@ import TodoItem from './TodoItem'
 
 const TodoList = ({isRefresh, setRefresh}) => {
     const [todos,setTodos] = useState([]);
-
+    //http://localhost:8000/todos
     useEffect(() => {
       if(isRefresh){
-        fetch("http://localhost:8000/todos")
+        fetch("http://localhost:8000/todos/")
         .then((res) => {
             return res.json();
         })
