@@ -1,8 +1,10 @@
 import React from 'react'
 
-const TodoItem = () => {
+const TodoItem = ({ todo }) => {
   return (
-    <li>Hit the gym <span class='close'>X</span></li>
+    <li className={`${todo.done ? "checked" : ""}`}>
+        {todo.title} <span className='close'>X</span>
+    </li>
   )
 }
 
