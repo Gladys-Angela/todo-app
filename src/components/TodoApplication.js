@@ -19,7 +19,7 @@ function TodoApplication() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:9292/todo_categories")
+    fetch("http://localhost:9292/todo/categories")
       .then((r) => r.json())
       .then(function(data) {
         setTodoCategories(data)

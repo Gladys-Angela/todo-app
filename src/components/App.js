@@ -4,7 +4,7 @@ import NavBar from "./NavBar";
 import TodoApplication from './TodoApplication';
 import ShoppingApplication from "./ShoppingApplication";
 import Home from "./Home"
-import { Route, Switch} from "react-router-dom";
+import { Route, Switch } from "react-router-dom"
 
 
 import {UserContext} from './UserContext'
@@ -72,7 +72,7 @@ function App() {
   
       <h1>List Metaverse</h1>
       <NavBar />
-      <Switch>
+       <Switch>
           <Route path="/todo-list">
             <TodoApplication />
           </Route>
@@ -85,7 +85,6 @@ function App() {
             <Home error={error} login={login} logout={logout}/>
           </Route>
       </Switch>
-      
     </UserContext.Provider>
     </div>
     
