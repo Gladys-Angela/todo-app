@@ -1,37 +1,35 @@
-import React, {useEffect, useState }from 'react'
-import TodoItem from './TodoItem'
 
-const TodoList = ({isRefresh, setRefresh}) => {
-    const [todos,setTodos] = useState([]);
-    //http://localhost:8000/todos
-    useEffect(() => {
-      if(isRefresh){
-        fetch("http://localhost:8000/todos/")
-        .then((res) => {
-            return res.json();
-        })
-        .then((data) => {
-            setRefresh(false)
-            setTodos(data);
-        })
-        .catch((err) => {
-            setRefresh(false)
-            if (err.name === "AbortError") {
-                console.log("fetch aborted");
-            }
-        })
-    }
-    }, [isRefresh, setRefresh]);
+import React from "react";
+import TodoItem from "./TodoItem";
+import TodoCategoryFilter from "./TodoCategoryFilter";
+import TodoNewItemForm from "./TodoNewItemForm";
 
+function TodoList ({onDeleteTodo, todos, todoCategories, categoryNames, selectedCategory, onCategorySelected, onNewTodoFormSubmit}) {
 
-  return (
-    <ul id='todo-list'>
-        {todos.map((todo) => (
-    <TodoItem todo={todo} key={todo.id} />
-        ))}
-       
-    </ul>
-  );
+    const todoElements = todos.map((todo) => {
+        const categoryId = todo.todo_category_id
+        return (
+            <TodoItem
+                title={todo.title}
+                key={todo.title}
+                category={categoryNames[categoryId]}
+                onDeleteTodo={onDeleteTodo}
+                todoId={todo.id}
+                className={todo}
+            />
+        )
+    })
+
+    return (
+        <div>
+            <TodoNewItemForm todoCategories={categoryNames} onNewTodoFormSubmit={onNewTodoFormSubmit} />
+            <br></br>
+            <TodoCategoryFilter todoCategories={categoryNames} selectedCategory={selectedCategory} onCategorySelected={onCategorySelected} />
+            <div>{todoElements}</div>
+        </div>
+        )
 }
 
-export default TodoList;
+export default TodoList
+
+

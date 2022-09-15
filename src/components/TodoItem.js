@@ -1,36 +1,22 @@
+
+   
 import React from "react";
 
-const TodoItem = ({ todo, setRefresh }) => {
+function TodoItem({ category, title, todoId, onDeleteTodo }) {
 
-    const updateTodo = () => {
-    todo.done = !todo.done
-    //http://localhost:8000/todos/
-    fetch("http://localhost:9292/todos/" + todo.id, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(todo)
-    }).then(()=> {
-        console.log('todo updated.')
-        setRefresh(true)
-    })
-}
-//http://localhost:8000/todos/
-const deleteTodo = () => {
-    fetch("http://localhost:9292/todos/" + todo.id, {
-        method: "DELETE",
-    }).then(()=> {
-        console.log('todo deleted.')
-        setRefresh(true)
-    })
-}
-  return (
-    <li className={`${todo.done ? "checked" : ""}`}>
-        <div onClick={updateTodo}>{todo.title}</div>
-        <span className='close' onClick={deleteTodo}>x</span>
-    </li>
-  )
-};
+    function handleClick() {
+        fetch(`http://localhost:9292/todos/${todoId}`, {
+            method: "DELETE"
+        });
+        onDeleteTodo(todoId)}
 
-export default TodoItem
+    return (
+        <div className="todo">
+            <div className={"todo-cat"}>{category}</div>
+            <div className={"todo-title"}>{title}</div>
+            <button className="delete-button" onClick={handleClick}>X</button>
+        </div>
+    )
+}
+
+export default TodoItem;
