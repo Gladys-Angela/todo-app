@@ -1,6 +1,9 @@
 # Todo APP
 This is a very simple todo list aplication written using React.js.
 
+### Backend repo
+https://github.com/Gladys-Angela/phase-3-sinatra-react-project.git
+
 ## Features
 
 The application enables different users to make two different types of lists: a todo list and a shopping list. Items on these lists can be tagged with different categories in a one-to-many relationship:
@@ -23,7 +26,6 @@ The application uses Active Record to interact with the database and API routes 
 ### Live Link
 
 
-### Backend repo
 
 
 
