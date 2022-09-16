@@ -70,7 +70,7 @@ function App() {
     <div className="App">
     <UserContext.Provider value={providerValue}>
   
-      <h1>List Metaverse</h1>
+      <h1>T.List</h1>
       <NavBar />
        <Switch>
           <Route path="/todo-list">
