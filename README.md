@@ -1,6 +1,11 @@
 # Todo APP
 This is a very simple todo list aplication written using React.js.
 
+
+### Live Link
+
+https://todo-app-alpha-tan.vercel.app/
+
 ### Backend repo
 https://github.com/Gladys-Angela/phase-3-sinatra-react-project.git
 
@@ -21,9 +26,6 @@ The application uses Active Record to interact with the database and API routes 
     retrieving a list of shopping items from the server
     adding a new shopping item to the shopping list
     removing a shopping item from the list
-
-
-### Live Link
 
 
 
