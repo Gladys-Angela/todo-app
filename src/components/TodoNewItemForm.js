@@ -29,7 +29,8 @@ function TodoNewItemForm({ todoCategories, onNewTodoFormSubmit}) {
     function handleSubmit(event) {
         event.preventDefault()
 
-        fetch("http://localhost:9292/todos", {
+        //fetch("http://localhost:9292/todos", {
+            fetch("http://localhost:9292/todos", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
